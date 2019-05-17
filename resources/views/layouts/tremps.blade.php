@@ -14,29 +14,29 @@
                             <div class="col-md-6" style="direction:RTL; text-align: right">
                                 <select id="hourfrom" class="form-control" name="hourfrom">
                                 <option value="00:00" selected>0:00</option>
-  <option value="01:00">1:00</option>
-  <option value="02:00">2:00</option>
-  <option value="03:00">3:00</option>
-  <option value="04:00">4:00</option>
-  <option value="05:00">5:00</option>
-  <option value="06:00">6:00</option>
-  <option value="07:00">7:00</option>
-  <option value="08:00">8:00</option>
-  <option value="09:00">9:00</option>
-  <option value="10:00">10:00</option>
-  <option value="11:00">11:00</option>
-  <option value="12:00">12:00</option>
-  <option value="13:00">13:00</option>
-  <option value="14:00">14:00</option>
-  <option value="15:00">15:00</option>
-  <option value="16:00">16:00</option>
-  <option value="17:00">17:00</option>
-  <option value="18:00">18:00</option>
-  <option value="19:00">19:00</option>
-  <option value="20:00">20:00</option>
-  <option value="21:00">21:00</option>
-  <option value="22:00">22:00</option>
-  <option value="23:00">23:00</option>
+                                <option value="01:00">1:00</option>
+                                <option value="02:00">2:00</option>
+                                <option value="03:00">3:00</option>
+                                <option value="04:00">4:00</option>
+                                <option value="05:00">5:00</option>
+                                <option value="06:00">6:00</option>
+                                <option value="07:00">7:00</option>
+                                <option value="08:00">8:00</option>
+                                <option value="09:00">9:00</option>
+                                <option value="10:00">10:00</option>
+                                <option value="11:00">11:00</option>
+                                <option value="12:00">12:00</option>
+                                <option value="13:00">13:00</option>
+                                <option value="14:00">14:00</option>
+                                <option value="15:00">15:00</option>
+                                <option value="16:00">16:00</option>
+                                <option value="17:00">17:00</option>
+                                <option value="18:00">18:00</option>
+                                <option value="19:00">19:00</option>
+                                <option value="20:00">20:00</option>
+                                <option value="21:00">21:00</option>
+                                <option value="22:00">22:00</option>
+                                <option value="23:00">23:00</option>
                                 </select>
                             </div><label for="hourfrom" class="col-md-4 control-label">משעה</label>
 
@@ -46,29 +46,29 @@
                             <div class="col-md-6" style="direction:RTL; text-align: right">
                                 <select id="hourto" class="form-control" name="hourto">
                                 <option value="00:00">0:00</option>
-  <option value="01:00">1:00</option>
-  <option value="02:00">2:00</option>
-  <option value="03:00">3:00</option>
-  <option value="04:00">4:00</option>
-  <option value="05:00">5:00</option>
-  <option value="06:00">6:00</option>
-  <option value="07:00">7:00</option>
-  <option value="08:00">8:00</option>
-  <option value="09:00">9:00</option>
-  <option value="10:00">10:00</option>
-  <option value="11:00">11:00</option>
-  <option value="12:00">12:00</option>
-  <option value="13:00">13:00</option>
-  <option value="14:00">14:00</option>
-  <option value="15:00">15:00</option>
-  <option value="16:00">16:00</option>
-  <option value="17:00">17:00</option>
-  <option value="18:00">18:00</option>
-  <option value="19:00">19:00</option>
-  <option value="20:00">20:00</option>
-  <option value="21:00">21:00</option>
-  <option value="22:00">22:00</option>
-  <option value="23:00" selected>23:00</option>
+                                <option value="01:00">1:00</option>
+                                <option value="02:00">2:00</option>
+                                <option value="03:00">3:00</option>
+                                <option value="04:00">4:00</option>
+                                <option value="05:00">5:00</option>
+                                <option value="06:00">6:00</option>
+                                <option value="07:00">7:00</option>
+                                <option value="08:00">8:00</option>
+                                <option value="09:00">9:00</option>
+                                <option value="10:00">10:00</option>
+                                <option value="11:00">11:00</option>
+                                <option value="12:00">12:00</option>
+                                <option value="13:00">13:00</option>
+                                <option value="14:00">14:00</option>
+                                <option value="15:00">15:00</option>
+                                <option value="16:00">16:00</option>
+                                <option value="17:00">17:00</option>
+                                <option value="18:00">18:00</option>
+                                <option value="19:00">19:00</option>
+                                <option value="20:00">20:00</option>
+                                <option value="21:00">21:00</option>
+                                <option value="22:00">22:00</option>
+                                <option value="23:00" selected>23:00</option>
                                 </select>
                             </div><label for="hourto" class="col-md-4 control-label">עד שעה</label>
                         </div>
@@ -104,6 +104,8 @@
                             <tr>
                                 <th scope="col"  style="direction:RTL; text-align: right">שם מבצע ההזמנה</th>
                                 <th scope="col"  style="direction:RTL; text-align: right">Gmail</th>
+                                <th scope="col"  style="direction:RTL; text-align: right">זמן יציאה</th>
+                                <th scope="col"  style="direction:RTL; text-align: right">זמן חזרה</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -111,6 +113,8 @@
                             <tr>
                                 <td  style="direction:RTL; text-align: right">{{App\User::find($tremp->userid)->name}}</td>
                                 <td  style="direction:RTL; text-align: right">{{App\User::find($tremp->userid)->gmail}}</td>
+                                <td  style="direction:RTL; text-align: right">{{$tremp->start_time}}</td>
+                                <td  style="direction:RTL; text-align: right">{{$tremp->end_time}}</td>
                             </tr>
                          @endforeach
                         </tbody>

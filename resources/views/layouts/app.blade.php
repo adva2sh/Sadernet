@@ -23,6 +23,24 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
+    <?php if(isset($order)){?>
+        <script>
+            $( document ).ready(function() {
+                var textToFind = '{{ $order->destination }}';
+
+                                var dd = document.getElementById('destination');
+                                if(dd != null){
+                                    for (var i = 0; i < dd.options.length; i++) {
+                                        if (dd.options[i].text === textToFind) {
+                                            dd.selectedIndex = i;
+                                            break;
+                                        }
+                                    }
+                                }
+            });
+                                
+                            </script>
+    <?php } ?>
 </head>
 <body>
     <div id="app">

@@ -12,20 +12,16 @@
                     <form class="form-horizontal" role="form" method="POST" action="/dosanction">
                         {{ csrf_field() }}
 
-                        <div class="form-group" style="direction:RTL; text-align: right">
-                            
+                        <div class="form-group" style="direction:RTL; text-align: right">                            
                             <div class="col-md-6" style="direction:RTL; text-align: right">
                                 <input id="userid" type="text" class="form-control" name="userid">
                             </div><label for="userid" class="col-md-4 control-label">מזהה משתמש</label>
-
                         </div>
 
-                        <div class="form-group">
-                            
+                        <div class="form-group">                            
                             <div class="col-md-6">
                                 <textarea id="reason" class="form-control" name="reason" required></textarea>
                             </div><label for="reason" class="col-md-4 control-label">סיבה לסנקציה</label>
-
                         </div>
 
                         <div class="form-group">
@@ -62,7 +58,7 @@
                         <tbody>
                         @foreach($sanctions as $sanction)
                             <tr>
-                                <td  style="direction:RTL; text-align: right">{{$sanction->userid}}</td>
+                                <td  style="direction:RTL; text-align: right">{{$sanction->user_id}}</td>
                                 <td  style="direction:RTL; text-align: right">{{App\User::find($sanction->user_id)->name}}</td>
                                 <td  style="direction:RTL; text-align: right">{{$sanction->time}}</td>
                                 <td  style="direction:RTL; text-align: right">{{$sanction->reason}}</td>

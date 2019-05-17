@@ -13,49 +13,101 @@
                         
                         <div class="form-group" style="direction:RTL; text-align: right">
                     
-                    <h5>פורמט זמן : dd/mm/YYYY HH:ii (לדוגמה 13/02/2019 19:35)</h5>
                 </div>
                         <div class="form-group{{ $errors->has('start_time') ? ' has-error' : '' }}"  style="direction:RTL; text-align: right">
-                            
                             <div class="col-md-6" style="direction:RTL; text-align: right">
-                                <input id="start_time" type="text" class="form-control" name="start_time" value="{{ old('start_time') }}" required autofocus>
-
-                                @if ($errors->has('start_time'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('start_time') }}</strong>
-                                    </span>
-                                @endif
-
-                            </div><label for="start_time" class="col-md-4 control-label">זמן התחלה</label>
-                            
-
+                                <input id="start_time" type="text" placeholder="HH:ii" class="form-control" name="start_time" value="{{ old('start_time') }}" required autofocus>
+                            </div><label for="start_time" class="col-md-4 control-label">שעת התחלה</label>
+                        </div>
+                        <div class="form-group{{ $errors->has('start_date') ? ' has-error' : '' }}"  style="direction:RTL; text-align: right">
+                            <div class="col-md-6" style="direction:RTL; text-align: right">
+                                <input id="start_date" placeholder="dd/mm/YYYY" type="text" class="form-control" name="start_date" value="{{ old('start_date') }}" required autofocus>
+                            </div><label for="start_date" class="col-md-4 control-label">תאריך התחלה</label>
                         </div>
 
-                        <div class="form-group{{ $errors->has('end_time') ? ' has-error' : '' }}">
-                            
-                            <div class="col-md-6">
-                                <input id="end_time" type="text" class="form-control" name="end_time" value="{{ old('end_time') }}" required autofocus>
-
-                                @if ($errors->has('end_time'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('end_time') }}</strong>
-                                    </span>
-                                @endif
-                            </div><label for="end_time" class="col-md-4 control-label">זמן סיום</label>
-
+                        <div class="form-group{{ $errors->has('end_time') ? ' has-error' : '' }}"  style="direction:RTL; text-align: right">
+                            <div class="col-md-6" style="direction:RTL; text-align: right">
+                                <input id="end_time" type="text" placeholder="HH:ii" class="form-control" name="end_time" value="{{ old('end_time') }}" required autofocus>
+                            </div><label for="end_time" class="col-md-4 control-label">שעת התחלה</label>
+                        </div>
+                        <div class="form-group{{ $errors->has('end_date') ? ' has-error' : '' }}"  style="direction:RTL; text-align: right">
+                            <div class="col-md-6" style="direction:RTL; text-align: right">
+                                <input id="end_date" placeholder="dd/mm/YYYY" type="text" class="form-control" name="end_date" value="{{ old('end_date') }}" required autofocus>
+                            </div><label for="end_date" class="col-md-4 control-label">תאריך התחלה</label>
                         </div>
 
                         
                         <div class="form-group{{ $errors->has('destination') ? ' has-error' : '' }}">
-                            
+                           
                             <div class="col-md-6">
-                                <input id="destination" type="text" class="form-control" name="destination" value="{{ old('destination') }}" autofocus>
-                                
-                                @if ($errors->has('destination'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('destination') }}</strong>
-                                    </span>
-                                @endif
+                                <select id="destination" class="form-control" name="destination" required >
+                                    <option disabled selected hidden></option>
+                                    <option value="אום אל-פחם">אום אל-פחם</option>
+<option value="אופקים">אופקים</option>
+<option value="אור יהודה">אור יהודה</option>
+<option value="אור עקיבא">אור עקיבא</option>
+<option value="אילת">אילת</option>
+<option value="אריאל">אריאל</option>
+<option value="אשדוד">אשדוד</option>
+<option value="אשקלון">אשקלון</option>
+<option value="באר שבע">באר שבע</option>
+<option value="בית שאן">בית שאן</option>
+<option value="בית שמש">בית שמש</option>
+<option value="בני ברק">בני ברק</option>
+<option value="בת ים">בת ים</option>
+<option value="גבעת שמואל">גבעת שמואל</option>
+<option value="גבעתיים">גבעתיים</option>
+<option value="דימונה">דימונה</option>
+<option value="הוד השרון">הוד השרון</option>
+<option value="הרצליה">הרצליה</option>
+<option value="חדרה">חדרה</option>
+<option value="חולון">חולון</option>
+<option value="חיפה">חיפה</option>
+<option value="טבריה">טבריה</option>
+<option value="טירת כרמל">טירת כרמל</option>
+<option value="יבנה">יבנה</option>
+<option value="יהוד-מונוסון">יהוד-מונוסון</option>
+<option value="יקנעם">יקנעם</option>
+<option value="ירושלים">ירושלים</option>
+<option value="כפר יונה">כפר יונה</option>
+<option value="כפר סבא">כפר סבא</option>
+<option value="כפר קאסם">כפר קאסם</option>
+<option value="כרמיאל">כרמיאל</option>
+<option value="לוד">לוד</option>
+<option value="מודיעין-מכבים-רעות">מודיעין-מכבים-רעות</option>
+<option value="מעלה אדומים">מעלה אדומים</option>
+<option value="נהריה">נהריה</option>
+<option value="נס ציונה">נס ציונה</option>
+<option value="נצרת">נצרת</option>
+<option value="נצרת עילית">נצרת עילית</option>
+<option value="נתיבות">נתיבות</option>
+<option value="נתניה">נתניה</option>
+<option value="עכו">עכו</option>
+<option value="עפולה">עפולה</option>
+<option value="ערד">ערד</option>
+<option value="פתח תקווה">פתח תקווה</option>
+<option value="צפת">צפת</option>
+<option value="קריית אונו">קריית אונו</option>
+<option value="קריית אתא">קריית אתא</option>
+<option value="קריית ביאליק">קריית ביאליק</option>
+<option value="קריית גת">קריית גת</option>
+<option value="קריית ים">קריית ים</option>
+<option value="קריית מוצקין">קריית מוצקין</option>
+<option value="קריית מלאכי">קריית מלאכי</option>
+<option value="קריית שמונה">קריית שמונה</option>
+<option value="ראש העין">ראש העין</option>
+<option value="ראשון לציון">ראשון לציון</option>
+<option value="רהט">רהט</option>
+<option value="רחובות">רחובות</option>
+<option value="רמלה">רמלה</option>
+<option value="רמת גן">רמת גן</option>
+<option value="רמת השרון">רמת השרון</option>
+<option value="רעננה">רעננה</option>
+<option value="שדרות">שדרות</option>
+<option value="תל אביב-יפו">תל אביב-יפו</option>
+
+                                </select>
+
                             </div><label for="destination" class="col-md-4 control-label">יעד</label>
 
                         </div>
@@ -64,25 +116,15 @@
                            
                             <div class="col-md-6">
                                 <input  id="tremp" type="checkbox" name="tremp">
-                                
-                                @if ($errors->has('tremp'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('tremp') }}</strong>
-                                    </span>
-                                @endif
+
                             </div> <label for="tremp" class="col-md-4 control-label">להציג כטרמפ?</label>
 
                         </div>
                         <div class="form-group{{ $errors->has('userspay') ? ' has-error' : '' }}">
                            
                             <div class="col-md-6">
-                                <input id="userspay" type="userspay" class="form-control" name="userspay" value="{{ old('userspay') }}" required>
+                                <input id="userspay" type="text" class="form-control" name="userspay" value="{{ old('userspay') }}" >
 
-                                @if ($errors->has('userspay'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('userspay') }}</strong>
-                                    </span>
-                                @endif
                             </div> <label for="userspay" class="col-md-4 control-label">חיוב משתמשים נוספים (הפרד מספרי ת"ז בפסיקים)</label>
 
                         </div>
@@ -90,12 +132,8 @@
                         <div class="form-group{{ $errors->has('autopay') ? ' has-error' : '' }}">
                             
                             <div class="col-md-6">
-                                <input  id="autopay" type="checkbox" name="autopay">
-                                @if ($errors->has('autopay'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('autopay') }}</strong>
-                                    </span>
-                                @endif
+                                <input  id="autopay" type="checkbox" name="autopay"> {{ $name }}
+
                             </div><label for="autopay" class="col-md-4 control-label">לחייב אוטומטית?</label>
 
                         </div>

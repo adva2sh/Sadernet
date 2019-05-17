@@ -38,8 +38,7 @@
                             
                             <div class="col-md-6">
 
-                                <textarea id="comments" class="form-control" name="comments">
-                                </textarea>
+                                <textarea id="comments" class="form-control" name="comments"></textarea>
                             </div><label for="facebook" class="col-md-4 control-label">הערות</label>
 
                         </div>

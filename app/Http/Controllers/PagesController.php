@@ -135,7 +135,7 @@ class PagesController extends Controller
     }
 
     public function order(){
-        return view('orders.order');
+        return view('orders.order')->with('name', Auth::user()->name);
     }
 
     /**
@@ -146,15 +146,15 @@ class PagesController extends Controller
     public function doorder(Request $request)
     {
         try {
-            Carbon::createFromFormat("d/m/Y H:i", $request->input('start_time'));
-            Carbon::createFromFormat("d/m/Y H:i", $request->input('end_time'));
+            Carbon::createFromFormat("d/m/Y H:i", $request->input('start_date').' '.$request->input('start_time'));
+            Carbon::createFromFormat("d/m/Y H:i", $request->input('end_date').' '.$request->input('end_time'));
             $order = new Order;
-            $order->start_time = $request->input('start_time');
+            $order->start_time = $request->input('start_date').' '.$request->input('start_time');
             $st = Carbon::createFromFormat("d/m/Y H:i",$order->start_time);
-            $order->end_time = $request->input('end_time');
+            $order->end_time = $request->input('end_date').' '.$request->input('end_time');
             $order->destination = $request->input('destination');
             $order->tremp = $request->input('tremp') == 'on';
-            $order->userspay = $request->input('userspay');
+            $order->userspay = $request->input('userspay') == null ? "" : $request->input('userspay');
             $order->cost = rand(20,200);
             $order->autopay = $request->input('autopay') == 'on';
             $order->userid = Auth::user()->id;
@@ -216,17 +216,16 @@ class PagesController extends Controller
         return redirect('/manageorders')->with(['success'=>'ההזמנה נמחקה בהצלחה','orders'=>$orders]);        
     }
     public function doedit(Request $request){
-        try {
-            Carbon::createFromFormat("d/m/Y H:i", $request->input('start_time'));
-            Carbon::createFromFormat("d/m/Y H:i", $request->input('end_time'));
+        try { 
+            Carbon::createFromFormat("d/m/Y H:i", $request->input('start_date').' '.$request->input('start_time'));
+            Carbon::createFromFormat("d/m/Y H:i", $request->input('end_date').' '.$request->input('end_time'));
             $order = Order::find($request->order_id);
-            $order->start_time = $request->input('start_time');
-            $order->end_time = $request->input('end_time');
+            $order->start_time = $request->input('start_date').' '.$request->input('start_time');
+            $order->end_time = $request->input('end_date').' '.$request->input('end_time');
             $order->destination = $request->input('destination');
-            $order->tremp = $request->input('tremp') == 'on';
-            $order->userspay = $request->input('userspay');
+            $order->tremp = $request->input('tremp') == 'on';            
+            $order->userspay = $request->input('userspay') == null ? "" : $request->input('userspay');
             $order->autopay = $request->input('autopay') == 'on';
-            $order->approved = false;
             $order->userid = Auth::user()->id;
             $order->save();
             $orders = Order::all()->filter(function ($value, $key){
@@ -260,7 +259,7 @@ class PagesController extends Controller
     }
     public function edit($order_id){
         $order = Order::find($order_id);
-        return view('orders.edit')->with('order',$order);
+        return view('orders.edit')->with(['order'=>$order, 'name'=>User::find($order->userid)->name]);
     }
 
     public function filtertremps(Request $request){
@@ -348,7 +347,7 @@ class PagesController extends Controller
         foreach($admins as $admin){
             $this->sendmail($u->gmail, 'דווח על תקלה חדשה ברכב', 'סוג תקלה: '.$problem->type.'. מזהה מכונית: '.$problem->car_id.'. שם משתמש: '.$problem->user_name.' . הערות: '.$problem->comments);
         }
-        return redirect('/takeorreturn')->with('success', 'התקלה דווחה בהצלחה');
+        return $this->problems($request->carid);
     }
 
     public function reports(){
@@ -395,8 +394,16 @@ class PagesController extends Controller
             Auth::logout();
             return redirect('/login')->with('error','נחסמת בעקבות 3 סנקציות שקיבלת');
         }
-        //
         $orders = Order::all()->filter(function ($value, $key){
+            if(isset($_GET['today']))
+            {
+                $date = Carbon::createFromFormat('d/m/Y H:i', $value['start_time'])->toDateString();
+                $today = Carbon::now()->toDateString();
+                // if !today
+                if($today != $date){
+                    return false;
+                }
+            }
             return Auth::user()->admin || Auth::user()->id == $value['userid'];
         }); 
         return view('orders.manage')->with('orders',$orders);
