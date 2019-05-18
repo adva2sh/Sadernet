@@ -28,12 +28,12 @@
                         <div class="form-group{{ $errors->has('end_time') ? ' has-error' : '' }}"  style="direction:RTL; text-align: right">
                             <div class="col-md-6" style="direction:RTL; text-align: right">
                                 <input id="end_time" type="text" placeholder="HH:ii" class="form-control" name="end_time" value="{{ old('end_time') }}" required autofocus>
-                            </div><label for="end_time" class="col-md-4 control-label">שעת התחלה</label>
+                            </div><label for="end_time" class="col-md-4 control-label">שעת סיום</label>
                         </div>
                         <div class="form-group{{ $errors->has('end_date') ? ' has-error' : '' }}"  style="direction:RTL; text-align: right">
                             <div class="col-md-6" style="direction:RTL; text-align: right">
                                 <input id="end_date" placeholder="dd/mm/YYYY" type="text" class="form-control" name="end_date" value="{{ old('end_date') }}" required autofocus>
-                            </div><label for="end_date" class="col-md-4 control-label">תאריך התחלה</label>
+                            </div><label for="end_date" class="col-md-4 control-label">תאריך סיום</label>
                         </div>
 
                         
