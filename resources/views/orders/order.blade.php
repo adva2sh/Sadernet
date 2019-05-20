@@ -16,23 +16,23 @@
                 </div>
                         <div class="form-group{{ $errors->has('start_time') ? ' has-error' : '' }}"  style="direction:RTL; text-align: right">
                             <div class="col-md-6" style="direction:RTL; text-align: right">
-                                <input id="start_time" type="text" placeholder="HH:ii" class="form-control" name="start_time" value="{{ old('start_time') }}" required autofocus>
+                                <input autocomplete="off" id="start_time" type="text" placeholder="HH:ii" class="form-control" name="start_time" value="{{ old('start_time') }}" required autofocus>
                             </div><label for="start_time" class="col-md-4 control-label">שעת התחלה</label>
                         </div>
                         <div class="form-group{{ $errors->has('start_date') ? ' has-error' : '' }}"  style="direction:RTL; text-align: right">
                             <div class="col-md-6" style="direction:RTL; text-align: right">
-                                <input id="start_date" placeholder="dd/mm/YYYY" type="text" class="form-control" name="start_date" value="{{ old('start_date') }}" required autofocus>
+                                <input autocomplete="off" id="start_date" placeholder="dd/mm/YYYY" type="text" class="form-control" name="start_date" value="{{ old('start_date') }}" required autofocus>
                             </div><label for="start_date" class="col-md-4 control-label">תאריך התחלה</label>
                         </div>
 
                         <div class="form-group{{ $errors->has('end_time') ? ' has-error' : '' }}"  style="direction:RTL; text-align: right">
                             <div class="col-md-6" style="direction:RTL; text-align: right">
-                                <input id="end_time" type="text" placeholder="HH:ii" class="form-control" name="end_time" value="{{ old('end_time') }}" required autofocus>
+                                <input autocomplete="off" id="end_time" type="text" placeholder="HH:ii" class="form-control" name="end_time" value="{{ old('end_time') }}" required autofocus>
                             </div><label for="end_time" class="col-md-4 control-label">שעת סיום</label>
                         </div>
                         <div class="form-group{{ $errors->has('end_date') ? ' has-error' : '' }}"  style="direction:RTL; text-align: right">
                             <div class="col-md-6" style="direction:RTL; text-align: right">
-                                <input id="end_date" placeholder="dd/mm/YYYY" type="text" class="form-control" name="end_date" value="{{ old('end_date') }}" required autofocus>
+                                <input autocomplete="off" id="end_date" placeholder="dd/mm/YYYY" type="text" class="form-control" name="end_date" value="{{ old('end_date') }}" required autofocus>
                             </div><label for="end_date" class="col-md-4 control-label">תאריך סיום</label>
                         </div>
 
@@ -115,7 +115,7 @@
                         <div class="form-group{{ $errors->has('tremp') ? ' has-error' : '' }}">
                            
                             <div class="col-md-6">
-                                <input  id="tremp" type="checkbox" name="tremp">
+                                <input autocomplete="off"  id="tremp" type="checkbox" name="tremp">
 
                             </div> <label for="tremp" class="col-md-4 control-label">להציג כטרמפ?</label>
 
@@ -123,7 +123,7 @@
                         <div class="form-group{{ $errors->has('userspay') ? ' has-error' : '' }}">
                            
                             <div class="col-md-6">
-                                <input id="userspay" type="text" class="form-control" name="userspay" value="{{ old('userspay') }}" >
+                                <input autocomplete="off" id="userspay" type="text" class="form-control" name="userspay" value="{{ old('userspay') }}" >
 
                             </div> <label for="userspay" class="col-md-4 control-label">חיוב משתמשים נוספים (הפרד מספרי ת"ז בפסיקים)</label>
 
@@ -132,7 +132,7 @@
                         <div class="form-group{{ $errors->has('autopay') ? ' has-error' : '' }}">
                             
                             <div class="col-md-6">
-                                <input  id="autopay" type="checkbox" name="autopay"> {{ $name }}
+                                <input  id="autopay" type="checkbox" name="autopay" checked> {{ $name }}
 
                             </div><label for="autopay" class="col-md-4 control-label">לחייב אוטומטית?</label>
 

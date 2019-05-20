@@ -5,11 +5,7 @@
     <div class="row"  style="direction:RTL; text-align: right">
         <div class="col-md-10 col-md-offset-1"  style="direction:RTL; text-align: right">
             <div class="panel panel-default"  style="direction:RTL; text-align: right">
-                @if(!isset($_GET['today']))
-                    <div class="panel-heading"  style="direction:RTL; text-align: right">ניהול הזמנות רכב  <a href="/manageorders?today=1" class="btn btn-primary">הצג הזמנות להיום</a></div>
-                @else
-                    <div class="panel-heading"  style="direction:RTL; text-align: right">ניהול הזמנות רכב  <a href="/manageorders" class="btn btn-primary">הצג את כל ההזמנות</a></div>                
-                @endif
+                <div class="panel-heading"  style="direction:RTL; text-align: right">{{$header}}</div> 
                 <div class="panel-body" style="direction:RTL; text-align: right">
                 @if(count($orders) > 0)
                     <table class="table"  style="direction:RTL; text-align: right">

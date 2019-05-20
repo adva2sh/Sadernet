@@ -20,7 +20,12 @@
 
                         <div class="form-group">                            
                             <div class="col-md-6">
-                                <textarea id="reason" class="form-control" name="reason" required></textarea>
+                                <select id="reason" class="form-control" name="reason" required>
+                                    <option selected disabled hidden></option>
+                                    <option>איחור בהגעה</option>
+                                    <option>איחור בהחזרה</option>
+                                    <option>אי הגעה</option>
+                                </select>
                             </div><label for="reason" class="col-md-4 control-label">סיבה לסנקציה</label>
                         </div>
 

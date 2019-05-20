@@ -238,8 +238,8 @@ class PagesController extends Controller
     }
     public function makereport(Request $request){
         try {
-            $from = Carbon::createFromFormat("d/m/Y H:i", $request->input('fromdate')." 00:00");
-            $to = Carbon::createFromFormat("d/m/Y H:i", $request->input('todate')." 00:00");
+            $from = Carbon::createFromFormat("d/m/Y H:i", $request->input('fromdate')." 00:01");
+            $to = Carbon::createFromFormat("d/m/Y H:i", $request->input('todate')." 23:59");
             switch($request->type){
                 case '0':
                     return (new OrdersExport($from, $to))->download('orders.csv', \Maatwebsite\Excel\Excel::CSV);
@@ -377,12 +377,7 @@ class PagesController extends Controller
     }
 
     public function tremps(){
-        $tremps = Order::all()->filter(function ($value, $key){
-            if($value['tremp'] != 1)
-                return false;
-            return true;
-        }); 
-        return view('layouts.tremps')->with('tremps',$tremps);
+        return view('layouts.tremps');
     }
 
     public function manage(){
@@ -395,19 +390,33 @@ class PagesController extends Controller
             return redirect('/login')->with('error','נחסמת בעקבות 3 סנקציות שקיבלת');
         }
         $orders = Order::all()->filter(function ($value, $key){
-            if(isset($_GET['today']))
-            {
-                $date = Carbon::createFromFormat('d/m/Y H:i', $value['start_time'])->toDateString();
-                $today = Carbon::now()->toDateString();
-                // if !today
-                if($today != $date){
-                    return false;
-                }
-            }
-            return Auth::user()->admin || Auth::user()->id == $value['userid'];
+            //return Auth::user()->admin || Auth::user()->id == $value['userid'];
+            return Auth::user()->id == $value['userid'];
         }); 
-        return view('orders.manage')->with('orders',$orders);
+        return view('orders.manage')->with(['orders'=>$orders,'header'=>'ניהול הזמנות רכב']);
     }
+
+    public function main(){
+        // check sanctions
+        $sanctions = Sanc::all()->filter(function ($value, $key){
+            return Auth::user()->id == $value['user_id'];
+        }); 
+        if(count($sanctions)>=3){
+            Auth::logout();
+            return redirect('/login')->with('error','נחסמת בעקבות 3 סנקציות שקיבלת');
+        }
+        $orders = Order::all()->filter(function ($value, $key){
+            $date = Carbon::createFromFormat('d/m/Y H:i', $value['start_time'])->toDateString();
+            $today = Carbon::now()->toDateString();
+            // if !today
+            if($today != $date){
+                return false;
+            }
+            return true;
+        }); 
+        return view('orders.manage')->with(['orders'=>$orders,'header'=>'הזמנות רכב להיום']);
+    }
+
     public function sendmail($to, $subject, $body){
         $data = array("body" => $body);                    
         Mail::send('email', $data, function($message) use ($to, $subject) {

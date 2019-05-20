@@ -2,7 +2,7 @@
     <div class="container">
         <div class="navbar-header" style="float:right">
             <a class="navbar-brand" href="{{ url('/index') }}"   style="color:white;">
-                סדרנט
+                סידור רכב
             </a>
         </div>
 
@@ -17,6 +17,7 @@
                                 <li><a href="/sanctions"  style="color:white;">סנקציות</a></li>
                                 <li><a href="/reports"  style="color:white;">דו"חות</a></li>
                                 <li><a href="/cars"  style="color:white;">ניהול צי רכב</a></li>
+                                <li><a href="/takeorreturn"  style="color:white;">לקיחת / החזרת רכב</a></li>
                                 <li><a href="/tremps"  style="color:white;">טרמפים</a></li>
                                 <li><a href="/order"  style="color:white;">הזמנת רכב</a></li>
                             @else

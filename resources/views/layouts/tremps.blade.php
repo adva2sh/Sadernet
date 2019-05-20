@@ -10,7 +10,6 @@
                     <form class="form-horizontal" role="form" method="POST" action="/filtertremps">
                         {{ csrf_field() }}
                         <div class="form-group" style="direction:RTL; text-align: right">
-                            
                             <div class="col-md-6" style="direction:RTL; text-align: right">
                                 <select id="hourfrom" class="form-control" name="hourfrom">
                                 <option value="00:00" selected>0:00</option>
@@ -81,7 +80,73 @@
                         <div class="form-group" style="direction:RTL; text-align: right">
                             
                             <div class="col-md-6" style="direction:RTL; text-align: right">
-                                <input id="destination" type="text" class="form-control" name="destination" />
+                            <select id="destination" class="form-control" name="destination" required >
+                                    <option disabled selected hidden></option>
+                                    <option value="אום אל-פחם">אום אל-פחם</option>
+<option value="אופקים">אופקים</option>
+<option value="אור יהודה">אור יהודה</option>
+<option value="אור עקיבא">אור עקיבא</option>
+<option value="אילת">אילת</option>
+<option value="אריאל">אריאל</option>
+<option value="אשדוד">אשדוד</option>
+<option value="אשקלון">אשקלון</option>
+<option value="באר שבע">באר שבע</option>
+<option value="בית שאן">בית שאן</option>
+<option value="בית שמש">בית שמש</option>
+<option value="בני ברק">בני ברק</option>
+<option value="בת ים">בת ים</option>
+<option value="גבעת שמואל">גבעת שמואל</option>
+<option value="גבעתיים">גבעתיים</option>
+<option value="דימונה">דימונה</option>
+<option value="הוד השרון">הוד השרון</option>
+<option value="הרצליה">הרצליה</option>
+<option value="חדרה">חדרה</option>
+<option value="חולון">חולון</option>
+<option value="חיפה">חיפה</option>
+<option value="טבריה">טבריה</option>
+<option value="טירת כרמל">טירת כרמל</option>
+<option value="יבנה">יבנה</option>
+<option value="יהוד-מונוסון">יהוד-מונוסון</option>
+<option value="יקנעם">יקנעם</option>
+<option value="ירושלים">ירושלים</option>
+<option value="כפר יונה">כפר יונה</option>
+<option value="כפר סבא">כפר סבא</option>
+<option value="כפר קאסם">כפר קאסם</option>
+<option value="כרמיאל">כרמיאל</option>
+<option value="לוד">לוד</option>
+<option value="מודיעין-מכבים-רעות">מודיעין-מכבים-רעות</option>
+<option value="מעלה אדומים">מעלה אדומים</option>
+<option value="נהריה">נהריה</option>
+<option value="נס ציונה">נס ציונה</option>
+<option value="נצרת">נצרת</option>
+<option value="נצרת עילית">נצרת עילית</option>
+<option value="נתיבות">נתיבות</option>
+<option value="נתניה">נתניה</option>
+<option value="עכו">עכו</option>
+<option value="עפולה">עפולה</option>
+<option value="ערד">ערד</option>
+<option value="פתח תקווה">פתח תקווה</option>
+<option value="צפת">צפת</option>
+<option value="קריית אונו">קריית אונו</option>
+<option value="קריית אתא">קריית אתא</option>
+<option value="קריית ביאליק">קריית ביאליק</option>
+<option value="קריית גת">קריית גת</option>
+<option value="קריית ים">קריית ים</option>
+<option value="קריית מוצקין">קריית מוצקין</option>
+<option value="קריית מלאכי">קריית מלאכי</option>
+<option value="קריית שמונה">קריית שמונה</option>
+<option value="ראש העין">ראש העין</option>
+<option value="ראשון לציון">ראשון לציון</option>
+<option value="רהט">רהט</option>
+<option value="רחובות">רחובות</option>
+<option value="רמלה">רמלה</option>
+<option value="רמת גן">רמת גן</option>
+<option value="רמת השרון">רמת השרון</option>
+<option value="רעננה">רעננה</option>
+<option value="שדרות">שדרות</option>
+<option value="תל אביב-יפו">תל אביב-יפו</option>
+
+                                </select>
                             </div><label for="destination" class="col-md-4 control-label">יעד</label>
                         </div>
                         <div class="form-group">
@@ -94,6 +159,7 @@
                     </form>
                 </div>
             </div>
+            @if(isset($tremps))
             <div class="panel panel-default"  style="direction:RTL; text-align: right">
                 <div class="panel-heading"  style="direction:RTL; text-align: right">טרמפים</div>
                 
@@ -125,6 +191,7 @@
                     
                 </div>
             </div>
+            @endif
         </div>
     </div>
 </div>    

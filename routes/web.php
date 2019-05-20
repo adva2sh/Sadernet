@@ -14,8 +14,8 @@
 
 //Auth::routes();
 
-Route::get('/', 'PagesController@manage');
-Route::get('/index', 'PagesController@manage');
+Route::get('/', 'PagesController@main');
+Route::get('/index', 'PagesController@main');
 
 Route::get('/update', 'PagesController@update');
 Route::post('/doupdate', 'PagesController@doupdate');
