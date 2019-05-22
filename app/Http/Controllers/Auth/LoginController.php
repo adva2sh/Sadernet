@@ -43,7 +43,7 @@ class LoginController extends Controller
         } else {            
             return redirect('/login')->with('error','מספר זיהוי שגוי');
         }
-        return redirect('/manageorders');
+        return redirect('/index');
     }
 
 

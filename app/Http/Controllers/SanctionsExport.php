@@ -25,7 +25,7 @@ class SanctionsExport implements FromCollection
         $fromdate = $this->fromdate;
         $todate = $this->todate;
         return Sanc::all()->filter(function ($value, $key) use ($fromdate, $todate){
-            $date = Carbon::createFromFormat('d/m/Y' ,Carbon::createFromFormat('d/m/Y H:i', $value->start_time)->format('d/m/Y'));
+            $date = Carbon::createFromFormat('d/m/Y' ,Carbon::createFromFormat('d/m/Y H:i', $value->time)->format('d/m/Y'));
             return $fromdate->lte($date) && $date->lte($todate);
         }); ;
     }
