@@ -1,6 +1,14 @@
 <nav class="navbar navbar-inverse" style="background-color: #3b5998;text-color:white;">
     <div class="container">
         <div class="navbar-header" style="float:right">
+
+            <!-- Collapsed Hamburger -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse"  dir="rtl">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
             <a class="navbar-brand" href="{{ url('/index') }}"   style="color:white;">
                 סידור רכב
             </a>
