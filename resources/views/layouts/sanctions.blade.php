@@ -10,8 +10,7 @@
                 <div class="panel-heading"  style="direction:RTL; text-align: right">סנקציה חדשה</div>
                 <div class="panel-body" style="direction:RTL; text-align: right">
                     <form class="form-horizontal" role="form" method="POST" action="/dosanction">
-                        {{ csrf_field() }}
-
+            
                         <div class="form-group" style="direction:RTL; text-align: right">                            
                             <div class="col-md-6" style="direction:RTL; text-align: right">
                                 <input id="userid" type="text" class="form-control" name="userid">

@@ -8,7 +8,7 @@
                 <div class="panel-heading"  style="direction:RTL; text-align: right">אפשרות סינון</div>
                 <div class="panel-body" style="direction:RTL; text-align: right">
                     <form class="form-horizontal" role="form" method="POST" action="/filtertremps">
-                        {{ csrf_field() }}
+                  
                         <div class="form-group" style="direction:RTL; text-align: right">
                             <div class="col-md-6" style="direction:RTL; text-align: right">
                                 <select id="hourfrom" class="form-control" name="hourfrom">

@@ -9,7 +9,7 @@
                 <div class="panel-heading"  style="direction:RTL; text-align: right">רשום חבר חדש</div>
                 <div class="panel-body" style="direction:RTL; text-align: right">
                     <form class="form-horizontal" enctype="multipart/form-data" role="form" method="POST" action="/doregister">
-                        {{ csrf_field() }}
+               
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}"  style="direction:RTL; text-align: right">
                             
@@ -93,8 +93,7 @@
                         <div class="form-group" class="form-group{{ $errors->has('agreement') ? ' has-error' : '' }}">
                            
                             <div class="col-md-6    ">
-                                <textarea readonly>
-                                </textarea>
+                                <textarea readonly></textarea>
                             </div>  
                            
                             <label for="agreement" class="col-md-4 control-label">תנאי סידור הרכב</label>

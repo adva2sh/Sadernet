@@ -20,7 +20,6 @@ class CreateOrdersTable extends Migration
             $table->string('destination');
             $table->boolean('tremp');
             $table->string('userspay');
-            $table->boolean('autopay');
             // status:
             // 1. בהמתנה
             // 2. אושר

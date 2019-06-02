@@ -254,7 +254,7 @@ class PagesController extends Controller
 
             }
         } catch(\Exception $e){
-            return redirect('/reports'.$request->order_id)->with(['error' => 'שגיאה בעת יצירת הדו"ח.'.' '.$e]);
+            return redirect('/reports')->with(['error' => 'שגיאה בעת יצירת הדו"ח.'.' '.$e]);
         }
     }
     public function edit($order_id){
