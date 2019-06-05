@@ -156,7 +156,6 @@ class PagesController extends Controller
             $order->tremp = $request->input('tremp') == 'on';
             $order->userspay = $request->input('userspay') == null ? "" : $request->input('userspay');
             $order->cost = rand(20,200);
-            $order->autopay = $request->input('autopay') == 'on';
             $order->userid = Auth::user()->id;
             // TODO: check if there is a car available
             $all_cars = Car::all()->map(function ($value){
@@ -225,7 +224,6 @@ class PagesController extends Controller
             $order->destination = $request->input('destination');
             $order->tremp = $request->input('tremp') == 'on';            
             $order->userspay = $request->input('userspay') == null ? "" : $request->input('userspay');
-            $order->autopay = $request->input('autopay') == 'on';
             $order->userid = Auth::user()->id;
             $order->save();
             $orders = Order::all()->filter(function ($value, $key){

@@ -40,7 +40,6 @@ class DatabaseSeeder extends Seeder
             'destination' => 'tel-aviv',
             'tremp' => true,
             'userspay' => '12,34',
-            'autopay' => true,
             'status' => '1',
             'userid'=>1,
             'cost'=>rand(20,200)
@@ -51,7 +50,6 @@ class DatabaseSeeder extends Seeder
             'destination' => 'ashdod',
             'tremp' => false,
             'userspay' => '12,34',
-            'autopay' => false,
             'status' => '2',
             'car_number' => '12837192',
             'userid'=>2,

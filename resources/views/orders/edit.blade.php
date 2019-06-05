@@ -130,16 +130,6 @@
                             </div> <label for="userspay" class="col-md-4 control-label">חיוב משתמשים נוספים (הפרד מספרי ת"ז בפסיקים)</label>
 
                         </div>
-
-                        <div class="form-group{{ $errors->has('autopay') ? ' has-error' : '' }}">
-                            
-                            <div class="col-md-6">
-                                <input  id="autopay" type="checkbox" name="autopay" {{$order->autopay ? "checked":""}}>  {{ $name }}
-
-                            </div><label for="autopay" class="col-md-4 control-label">לחייב אוטומטית?</label>
-
-                        </div>
-
                                 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">

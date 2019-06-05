@@ -17,7 +17,6 @@
                                 <th scope="col"  style="direction:RTL; text-align: right">יעד</th>
                                 <th scope="col"  style="direction:RTL; text-align: right">טרמפ?</th>
                                 <th scope="col"  style="direction:RTL; text-align: right">משתמשים מחויבים</th>
-                                <th scope="col"  style="direction:RTL; text-align: right">תשלום אוטומטי?</th>
                                 <th scope="col"  style="direction:RTL; text-align: right">סטאטוס</th>
                                 <th scope="col"  style="direction:RTL; text-align: right">מזהה משתמש מזמין</th>
                                 <th scope="col"  style="direction:RTL; text-align: right">עלות (בשקלים)</th>
@@ -33,7 +32,6 @@
                                 <td  style="direction:RTL; text-align: right">{{$order->destination}}</td>
                                 <td  style="direction:RTL; text-align: right">{{$order->tremp == '0' ? 'לא' : 'כן'}}</td>
                                 <td  style="direction:RTL; text-align: right">{{$order->userspay}}</td>
-                                <td  style="direction:RTL; text-align: right">{{$order->autopay == '0' ? 'לא' : 'כן'}}</td>
                                 <td  style="direction:RTL; text-align: right">
                                 @if($order->status == '1')
                                     <p style="color: red">בהמתנה</p>
