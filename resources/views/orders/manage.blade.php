@@ -20,7 +20,6 @@
                                 <th scope="col"  style="direction:RTL; text-align: right">תשלום אוטומטי?</th>
                                 <th scope="col"  style="direction:RTL; text-align: right">סטאטוס</th>
                                 <th scope="col"  style="direction:RTL; text-align: right">מזהה משתמש מזמין</th>
-                                <th scope="col"  style="direction:RTL; text-align: right">מס' רכב</th>
                                 <th scope="col"  style="direction:RTL; text-align: right">עלות (בשקלים)</th>
                                 <th scope="col"  style="direction:RTL; text-align: right"></th>
                             </tr>
@@ -47,7 +46,6 @@
                                 @endif
                                 </td>
                                 <td  style="direction:RTL; text-align: right">{{$order->userid}}</td>
-                                <td  style="direction:RTL; text-align: right"></td>
                                 <td  style="direction:RTL; text-align: right">{{$order->cost}}</td>
                                 <td  style="direction:RTL; text-align: right"><a href="/edit/{{$order->id}}" class="btn btn-danger">ערוך</a></td>
                             </tr>
